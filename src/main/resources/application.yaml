@@ -1,0 +1,14 @@
+#文件上传路径
+file:
+  upload:
+    abpath: D:/1.java/test/upload/
+    urlpath: /upload/**
+    mdImageDir: /note/assets/
+    web_url: /upload/
+  path: D:\eshop\file\
+  avatar: D:\eshop\avatar\
+  # 文件大小 /M
+  maxSize: 100
+  avatarMaxSize: 5
+
+
