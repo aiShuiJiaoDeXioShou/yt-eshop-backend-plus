@@ -1,5 +1,6 @@
 package com.yangteng.api.handler;
 
+import cn.dev33.satoken.exception.NotLoginException;
 import com.yangteng.api.comm.ApiRest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -45,6 +46,13 @@ public class GlobalExceptionHandler {
     public ApiRest handler(IllegalArgumentException e) {
         log.error("Assert异常：----------------{}", e.getMessage());
         return ApiRest.fail(e.getMessage());
+    }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(NotLoginException.class)
+    public ApiRest handler(NotLoginException e) {
+        log.warn("用户未登录异常！");
+        return ApiRest.fail("您还未登录，请登录账号！");
     }
 }
 

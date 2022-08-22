@@ -16,15 +16,15 @@ public class UpdateTimeHandler implements MetaObjectHandler {
         log.info("开始执行字段插入时操作");
         //设置字段插入时候的操作
         //这里我们给它设置一个值
-        this.setFieldValByName("createdDate",LocalDateTime.now(),metaObject);
-        this.setFieldValByName("updatedDate",LocalDateTime.now(),metaObject);
+        this.setFieldValByName("createTime",LocalDateTime.now(),metaObject);
+        this.setFieldValByName("updateTime",LocalDateTime.now(),metaObject);
 //        updateUserId(metaObject);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
         log.info("开始执行字段更新时操作");
-        this.setFieldValByName("updatedDate",LocalDateTime.now(),metaObject);
+        this.setFieldValByName("updateTime",LocalDateTime.now(),metaObject);
         updateUserId(metaObject);
     }
 
